@@ -14,10 +14,8 @@ setuptools.setup(
     name='IMATAC',
     version='1.0.0',
     description='IMATAC is a deep hierarchical network with denoising autoencoder designed for the imputation of high-dimensional sparse scATAC-seq data.',
-    author='Your Name',
-    author_email='your.email@example.com',
     license='Apache License, Version 2.0',
-    url='https://github.com/yourusername/IMATAC',
+    url='https://github.com/lhqxinghun/IMATAC',
 
     include_package_data=True,
     packages=setuptools.find_packages(),
