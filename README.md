@@ -1,3 +1,6 @@
+## IMATAC
+IMATAC imputes single-cell ATAC-seq data by deep hierarchical network with denoising autoencoder.
+
 ### 1. Introduction
 
 IMATAC is a deep hierarchical network with denoising autoencoder designed for the imputation of high-dimensional sparse scATAC-seq data. 
