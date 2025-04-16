@@ -37,16 +37,16 @@ if __name__ == "__main__":
                         default='./config.JSON',
                         help='Path to the network parameters.')
     parser.add_argument('--dataset', type=str, 
-                        default='/media/llab/datadisk/ly/simCAS/data_discrete_716_drop50',
+                        default='',
                         help='Path to the input dataset.')
     parser.add_argument('--epoch', type=int, 
                         default=200, 
                         help='Number of training epochs.')
     parser.add_argument('--mark', type=str, 
-                        default='discrete_716_drop50', 
+                        default='', 
                         help='Identifier for the output files.')
     parser.add_argument('--num_components', type=int, 
-                        default=5, 
+                        default=1, 
                         help='Number of components for the classifier.')
     args = parser.parse_args()
     run(args)
