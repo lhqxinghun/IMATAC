@@ -11,13 +11,12 @@ IMATAC is a deep hierarchical network with denoising autoencoder designed for th
 
 Make sure all the packages listed in requirements.txt are installed.
   
-  - anndata==0.11.1
-  - auto_mix_prep==0.2.0
-  - numpy==1.21.4
-  - pandas==2.0.3
-  - scikit_learn==1.6.0
-  - torch==1.10.0+cu113
-  - tqdm==4.61.2
+  - anndata
+  - numpy
+  - pandas
+  - scikit_learn
+  - torch
+  - tqdm
 
 #### 2.3 Install from Github
 
