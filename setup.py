@@ -1,14 +1,22 @@
 import setuptools
-
+import os
 # Define the list of dependencies required for the package
-install_requires = [
-    'numpy>=1.18.0',
-    'scipy>=1.4.0',
-    'scikit-learn>=0.22.0',
-    'tensorflow>=2.0.0',
-    'pandas>=1.0.0',
-    'h5py>=2.10.0',
-]
+def get_requirements():
+    """Read requirements from requirements.txt."""
+    requirements_path = os.path.join(os.path.dirname(__file__), 'requirements.txt')
+    try:
+        with open(requirements_path, 'r', encoding='utf-8') as f:
+            requirements = [
+                line.strip()
+                for line in f.readlines()
+                if line.strip() and not line.startswith(('#', '-'))
+            ]
+    except FileNotFoundError:
+        raise RuntimeError(
+            f"requirements.txt not found at {requirements_path}. "
+            "Please create it with your project dependencies."
+        )
+    return requirements
 
 setuptools.setup(
     name='IMATAC',
@@ -19,5 +27,5 @@ setuptools.setup(
 
     include_package_data=True,
     packages=setuptools.find_packages(),
-    install_requires=install_requires,
+    install_requires=get_requirements(),
 )
