@@ -1,8 +1,8 @@
 {
     "fully_connect_layer": {
         "mlp": {
-            "hidden_dim": [128],
-            "out_dim": 128
+            "hidden_dim": [1024, 512],
+            "out_dim": 256
         },
         "upsample": { 
             "hidden_dim": []
