@@ -1,0 +1,79 @@
+## IMATAC
+IMATAC imputes single-cell ATAC-seq data by deep hierarchical network with denoising autoencoder.
+
+### 1. Introduction
+
+IMATAC is a deep hierarchical network with denoising autoencoder designed for the imputation of high-dimensional sparse scATAC-seq data.
+
+### 2. Installation
+
+#### 2.1 OS
+- Ubuntu 20.04 (recommended)
+
+#### 2.2 Required Python Packages
+
+Make sure all the packages listed in requirements.txt are installed:
+- anndata
+- numpy
+- pandas
+- scikit_learn
+- torch
+- tqdm
+
+#### 2.3 Install from Github
+
+First, download the IMATAC package:
+
+```bash
+git clone https://github.com/lhqxinghun/IMATAC
+```
+
+Second, install the package:
+
+```bash
+cd ./IMATAC
+pip install .
+```
+
+### 3. Usage Example
+
+IMATAC now supports modular training and evaluation. Recommended usage:
+
+#### 3.1 Train the Model
+```bash
+python train.py --config /path/to/config.JSON \
+                --dataset /path/to/dataset \
+                --epoch 100 \
+                --mark experiment1 \
+                --format h5ad
+```
+After training, model weights will be saved as `output/IMATAC_experiment1.pth`.
+
+#### 3.2 Evaluate and Impute
+```bash
+python eval.py --config /path/to/config.JSON \
+               --dataset /path/to/dataset \
+               --mark experiment1 \
+               --format h5ad \
+               --model_path output/IMATAC_experiment1.pth \
+               --output_scale log
+```
+The `--output_scale` argument can be set to `log` (log-normalized output) or `raw` (original scale output).
+Imputed results will be saved in `.h5ad` format for downstream analysis.
+
+#### 3.3 Output Description
+- Supports output in `.h5ad` (recommended), or you can modify to `.csv` or `.txt`.
+- Choose log-normalized or original scale output to fit your analysis needs.
+
+### 4. Features
+- Imputation for single-cell ATAC-seq data
+- Deep hierarchical network with denoising autoencoder
+- Flexible input formats (`h5ad` or count matrix)
+- Selectable output scale (log-normalized/original)
+- Separated training and evaluation scripts for easy extension
+
+### 5. Contact
+
+For questions or suggestions, please contact:
+
+hongqianglv@mail.xjtu.edu.cn or leeyao@stu.xjtu.edu.cn

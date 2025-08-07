@@ -1,0 +1,37 @@
+{
+    "fully_connect_layer": {
+        "mlp": {
+            "hidden_dim": [128],
+            "out_dim": 128
+        },
+        "upsample": { 
+            "hidden_dim": []
+        },
+        "classifier": {
+            "hidden_dim": 128
+        }
+    },
+    "conv_layer": {
+        "top_encoder": {
+            "hidden_channel": 64,
+            "out_channel": 64
+        }, 
+        "bottom_encoder": {
+            "in_channel": 1,
+            "hidden_channel": 64
+        },
+        "top_decoder": {
+            "out_channel": 1, 
+            "hidden_channel": 64
+        },
+        "bottom_decoder": {
+            "hidden_channel": 64
+        },
+        "upsample_layer": {
+            "channel": 64
+        },
+        "conv_layer": {
+            "channel": 64
+        }
+    }
+}
