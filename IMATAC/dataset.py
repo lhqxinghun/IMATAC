@@ -74,7 +74,7 @@ class PeakDataset(Dataset):
         sample = self.sample_list[index]
         data = self.data[sample]
         label = self.label.loc[sample]
-        label_onehot = self.label_onehot[index]
+        label_onehot = self.label_onehot.iloc[index]
         data = torch.tensor(data.values, dtype=torch.float32)
         # padding 
         data = F.pad(data, (0, self.shape - data.shape[0]), 'constant', 0)
@@ -140,3 +140,4 @@ class H5adPeakDataset(Dataset):
         data = F.pad(data, (0, self.shape - data.shape[0]), 'constant', 0)
         data = self.normalize(data)
         return data, label, sample, label_onehot
+
