@@ -2,9 +2,9 @@
 
 
 ################# STEP 1 ###################
-# unzip sinmdata
-if [ -f ../dataset/simdata.zip ]; then
-    unzip -o ../dataset/simdata.zip -d ./dataset/
+# unzip test data
+if [ -f ../dataset/test_data.zip ]; then
+    unzip -o ../dataset/test_data.zip -d ./dataset/
 fi
 
 ################# STEP 2 ###################
